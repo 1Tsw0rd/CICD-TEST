@@ -8,6 +8,6 @@ public class TestContorller {
 
     @GetMapping("/")
     public String getTest() {
-        return "CI/CD 테스트 중입니다. 제발 되라 ㅠㅠㅠddddd";
+        return "vvvCI/CD 테스트 중입니다. 제발 되라 ㅠㅠㅠddddd";
     }
 }
