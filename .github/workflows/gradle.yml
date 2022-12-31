@@ -28,7 +28,7 @@ permissions:
 #jobs는 수행할 워크플로우
 #어떤 일을 실행할 지 작성하는 부분
 jobs:
-  #아래 deploy는 job 이름으로 아무거나 써도 됨
+  #아래 deploy 부분은 job 이름이므로 아무거나 써도 됨
   deploy:
     name: Deploy
     #runs-on : job을 실행할 깃허브 CI서버 OS  << runner라고 부르는 듯
@@ -44,7 +44,6 @@ jobs:
       uses: actions/checkout@v3
       
     # 2) JDK 17 버전 설치, 다른 JDK 버전을 사용한다면 수정 필요
-    # distribution은 JDK 종류
     - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
@@ -54,6 +53,9 @@ jobs:
     # (3) Gradle build (Test 제외)    
     # Gradle 사용. arguments 를 붙이면 뒤에 그대로 실행된다고 생각하면 됨
     # 이 워크플로우는 gradle clean build를 수행함, -x test는 test디렉터리는 제외한다는 것
+    # build-root-directory는 최상위 위치에서 하위 디렉터리 지정 가능
+    # 난 git 상위 디렉터리 이름이 CICD-TEST 이고 SpringBoot 프로젝트는 CICD-TEST/cicdtest 이렇게 되어 있음
+    # 결국 gradle 디렉터리 CICD-TEST/cicdtest/gradle에 위치함
     - name: Build with Gradle
       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
       with:
@@ -69,6 +71,9 @@ jobs:
         aws-region: ${{ env.AWS_REGION }}
         
     # (5) 빌드 결과물을 S3 버킷에 업로드
+    # working-directory 설정 역시, appspec.yml 파일 위치를 가리키기 위함
+    # CICD-TEST/cicdtest/appspec.yml 위치함
+    # working-directory를 지정하지 않으면 CICD-TEST/appspec.yml을 가리켜서 ERROR 뜬다.
     - name: Upload to AWS S3
       run: |
         aws deploy push \
