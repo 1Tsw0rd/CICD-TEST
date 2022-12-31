@@ -53,7 +53,7 @@ jobs:
     # 권한 설정
     - name: Grant execute permission for gradlew
       run: chmod +x cicdtest/gradlew
-        
+
     # (3) Gradle build (Test 제외)    
     # Gradle 사용. arguments 를 붙이면 뒤에 그대로 실행된다고 생각하면 됨
     # 이 워크플로우는 gradle clean build 를 수행함
