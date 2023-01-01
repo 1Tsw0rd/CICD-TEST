@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 PROJECT_ROOT="/home/ec2-user/github-action/subproject"
-JAR_FILE="$PROJECT_ROOT/subproject-cicd-test.jar"
+JAR_FILE="$PROJECT_ROOT/subproject-cicdtest.jar"
 
 DEPLOY_LOG="$PROJECT_ROOT/deploy.log"
 
