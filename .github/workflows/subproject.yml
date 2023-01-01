@@ -22,7 +22,6 @@ env:
   CODE_DEPLOY_APPLICATION_NAME: keke-codedeploy-sub-app
   CODE_DEPLOY_DEPLOYMENT_GROUP_NAME: keke-codedeploy-sub-group
 
-
 permissions:
   contents: read
 
