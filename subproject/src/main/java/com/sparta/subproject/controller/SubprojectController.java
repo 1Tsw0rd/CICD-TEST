@@ -8,7 +8,7 @@ public class SubprojectController {
 
     @GetMapping("/")
     public String startTest(){
-        return "subproject cicd test 해보자ㄱㄱㄱㄱㄱ!!";
+        return "subproject cicd test 해보자ㄱㄱㄱㄱㄱ!! 다중 CI/CD 가보자!!!!";
     }
 
 }
