@@ -20,8 +20,7 @@ env:
   AWS_REGION: ap-northeast-2
   S3_BUCKET_NAME: keke-aws-s3-bucket
   CODE_DEPLOY_APPLICATION_NAME: keke-codedeploy-sub-app
-  CODE_DEPLOY_DEPLOYMENT_GROUP_NAME: keke-codedeploy-sub-app
-
+  CODE_DEPLOY_DEPLOYMENT_GROUP_NAME: keke-codedeploy-sub-group
 
 permissions:
   contents: read
