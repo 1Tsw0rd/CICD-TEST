@@ -3,7 +3,7 @@ os: linux
 
 files:
   - source:  /
-    destination: /home/ec2-user/github-action
+    destination: /home/ec2-user/github-action/cicdtest
     overwrite: yes
 
 permissions:
