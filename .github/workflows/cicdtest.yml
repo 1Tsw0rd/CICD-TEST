@@ -24,7 +24,6 @@ env:
   CODE_DEPLOY_APPLICATION_NAME: keke-codedeploy-cicdtest-app
   CODE_DEPLOY_DEPLOYMENT_GROUP_NAME: keke-codedeploy-cicdtest-group
 
-
 permissions:
   contents: read
 
